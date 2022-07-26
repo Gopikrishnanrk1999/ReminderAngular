@@ -1,0 +1,44 @@
+<body>
+    <div class="container w-25">    
+    <div class="text-center mt-5">
+        <i class="fa-solid fa-user-large fa-3x"></i>
+    </div>
+    <h1 class="text-center mt-3 fa-2x">Register</h1>
+    <!-- main form opening  -->
+    <form action="" class="border bg-light" [formGroup]="registerForm">
+        <!-- username  -->
+        <div class="mt-2 p-3">
+            <label for="u1" class="mb-2">Username</label>
+            <input type="text" formControlName="username" placeholder="Username" class="form-control mb-1" required>
+        </div>
+        <div *ngIf="this.registerForm.get('username')?.touched&&this.registerForm.get('username')?.errors" style="color: red;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Invalid Username</div>
+
+        <!-- Mobile no or Email  -->
+        <div class="mt-2 p-3">
+            <label for="u1" class="mb-2">Mobile Number or Email</label>
+            <input type="text" formControlName="Email" placeholder="Mobile Number or Email" class="form-control mb-1" required>
+        </div>
+        <div *ngIf="this.registerForm.get('Email')?.touched&&this.registerForm.get('Email')?.errors" style="color: red;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Invalid Email or Phone Number</div>
+
+        <!-- password  -->
+        <div class="mt-2 p-3">
+            <label for="p1" class="mb-2 mt-0">Password</label> 
+            <input type="text" formControlName="pswd" placeholder="Password" class="form-control" required>
+        </div>
+        <div *ngIf="this.registerForm.get('pswd')?.touched&&this.registerForm.get('pswd')?.errors" style="color: red;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Invalid Password</div>
+
+        <!-- button  -->
+        <div class="p-3 text-center">
+            <button class="btn btn-success w-100">
+                Submit
+            </button>
+        </div>
+        <!-- main form closing  -->
+        </form>
+
+        <!-- new ac  -->
+        <!-- <div class="border mt-3 text-center bg-light p-2">
+            New to Reminder App? <a routerLink="register">Register</a>
+        </div> -->
+    </div>
+</body>
